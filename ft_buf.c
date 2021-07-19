@@ -29,8 +29,6 @@ int	*ft_parse(t_params *params, char *buffer)
 			array[i] = EMPTY;
 		else if (buffer[i] == params->obstacle)
 			array[i] = OBSTACLE;
-		else if (buffer[i] == params->full)
-			array[i] = FULL;
 		else
 		{
 			free(array);

@@ -6,7 +6,8 @@ FILES = \
 	ft_parse.c \
 	ft_solve.c \
 	ft_char.c \
-	ft_buf.c
+	ft_buf.c \
+	ft_print.c
 
 all: ${NAME}
 

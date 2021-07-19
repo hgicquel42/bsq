@@ -10,6 +10,11 @@ int	ft_strlen(char *s)
 	return (i);
 }
 
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
 void	ft_putout(char *s)
 {
 	write(1, s, ft_strlen(s));

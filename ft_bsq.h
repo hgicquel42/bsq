@@ -7,9 +7,8 @@
 
 # define LINE 1024
 
-# define EMPTY 0
-# define OBSTACLE 1
-# define FULL 2
+# define EMPTY 1
+# define OBSTACLE 0
 
 typedef struct s_params
 {
@@ -20,7 +19,16 @@ typedef struct s_params
 	char	full;
 }	t_params;
 
+typedef struct s_point
+{
+	int	v;
+	int	x;
+	int	y;
+}	t_point;
+
 int			ft_strlen(char *s);
+
+void		ft_putchar(char c);
 
 void		ft_putout(char *s);
 
@@ -37,5 +45,7 @@ t_params	*ft_read_header(int file);
 int			**ft_read_lines(int file, t_params *params);
 
 int			ft_solve(t_params *params, int **lines);
+
+void		ft_print(t_params *params, int **lines, t_point max);
 
 #endif

@@ -61,7 +61,7 @@ int	**ft_read_lines(int file, t_params *params)
 			return (0);
 		if (!params->length)
 			params->length = offset;
-		if (offset != params->length)
+		if (!offset || offset != params->length)
 			return (0);
 		if (!lines)
 			lines = ft_alloc(params);

@@ -27,10 +27,15 @@ int	*ft_parse(t_params *params, char *buffer)
 	{
 		if (buffer[i] == params->empty)
 			array[i] = EMPTY;
-		if (buffer[i] == params->obstacle)
+		else if (buffer[i] == params->obstacle)
 			array[i] = OBSTACLE;
-		if (buffer[i] == params->full)
+		else if (buffer[i] == params->full)
 			array[i] = FULL;
+		else
+		{
+			free(array);
+			return (0);
+		}
 		i++;
 	}
 	return (array);

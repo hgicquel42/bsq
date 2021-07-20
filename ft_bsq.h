@@ -17,7 +17,7 @@
 # include <unistd.h>
 # include <fcntl.h>
 
-# define LINE 1024
+# define LINE 4096
 
 # define EMPTY 1
 # define OBSTACLE 0

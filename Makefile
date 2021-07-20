@@ -28,7 +28,7 @@ fclean: clean
 re: fclean all
 
 test: ${NAME}
-	perl gen.pl 50 50 1 > test
+	perl gen.pl 100 1000 5 > test
 	./bsq test
 
 .PHONY: all test clean

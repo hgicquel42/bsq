@@ -28,7 +28,7 @@ void	ft_print(t_params *params, int **lines, t_point max)
 				ft_putchar(params->obstacle);
 			else if (ft_check(x, y, max))
 				ft_putchar(params->full);
-			else 
+			else
 				ft_putchar(params->empty);
 			x++;
 		}

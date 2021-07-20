@@ -14,7 +14,7 @@ OBJS = $(FILES:.c=.o)
 all: ${NAME}
 
 .c.o:
-	gcc -Wall -Wextra -Werror  -c $< -o ${<:.c=.o}
+	gcc -Wall -Wextra -Werror -c $< -o ${<:.c=.o}
 
 ${NAME}:	${OBJS}
 	gcc -Wall -Wextra -Werror ${OBJS} -o ${NAME}

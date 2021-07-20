@@ -9,10 +9,15 @@ FILES = \
 	ft_buf.c \
 	ft_print.c
 
+OBJS = $(FILES:.c=.o)
+
 all: ${NAME}
 
-${NAME}:
-	gcc -Wall -Wextra -Werror ${FILES} -o ${NAME}
+.c.o:
+	gcc -Wall -Wextra -Werror  -c $< -o ${<:.c=.o}
+
+${NAME}:	${OBJS}
+	gcc -Wall -Wextra -Werror ${OBJS} -o ${NAME}
 
 nowarning:
 	gcc ${FILES} -o ${NAME}

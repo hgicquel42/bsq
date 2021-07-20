@@ -13,7 +13,7 @@ int	ft_min3(int a, int b, int c)
 
 int	ft_count(int **lines, int x, int y)
 {
-	int top;
+	int	top;
 	int	left;
 	int	topleft;
 

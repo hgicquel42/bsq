@@ -34,6 +34,8 @@ void		ft_putout(char *s);
 
 void		ft_puterr(char *s);
 
+int			ft_is_printable(char c);
+
 int			ft_is_number(char c);
 
 int			**ft_alloc(t_params *params);

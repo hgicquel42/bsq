@@ -14,6 +14,23 @@ int	ft_read_line(int file, char *buffer, int *offset)
 	return (1);
 }
 
+int	ft_check_chars(t_params *params)
+{
+	if (!ft_is_printable(params->empty))
+		return (0);
+	if (!ft_is_printable(params->obstacle))
+		return (0);
+	if (!ft_is_printable(params->full))
+		return (0);
+	if (params->empty == params->obstacle)
+		return (0);
+	if (params->obstacle == params->full)
+		return (0);
+	if (params->full == params->empty)
+		return (0);
+	return (1);
+}
+
 t_params	*ft_parse_header(char *buffer, int offset)
 {
 	int			i;
@@ -30,6 +47,8 @@ t_params	*ft_parse_header(char *buffer, int offset)
 	params->empty = buffer[i++];
 	params->obstacle = buffer[i++];
 	params->full = buffer[i++];
+	if (!ft_check_chars(params))
+		return (0);
 	if (i != offset)
 		return (0);
 	return (params);

@@ -19,9 +19,6 @@ all: ${NAME}
 ${NAME}:	${OBJS}
 	gcc -Wall -Wextra -Werror ${OBJS} -o ${NAME}
 
-nowarning:
-	gcc ${FILES} -o ${NAME}
-
 clean:
 	rm -f *.o
 
@@ -30,4 +27,8 @@ fclean: clean
 
 re: fclean all
 
-ren: fclean nowarning
+test: ${NAME}
+	perl gen.pl 50 50 1 > test
+	./bsq test
+
+.PHONY: all test clean
